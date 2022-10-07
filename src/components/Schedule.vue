@@ -98,7 +98,7 @@ export default {
     dayTable:{
       type: Array,
       default: ['So','Mo','Tu','We','Th','Fr','Sa'],
-      validator: val => val.length == 7
+      // validator: val => val.length == 7
     },
     timeArray: {
       type: Array,
