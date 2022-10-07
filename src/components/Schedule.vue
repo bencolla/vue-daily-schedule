@@ -55,9 +55,9 @@ Copyright Sultan Ads 2020.
                 'vws-time-list vws-rule-time-item': true, 
                 'active': timetable[daynum].find(el => el == idx ) != undefined ? true:false
               }" 
-              @click="toggleDay(daynum, idx)"
+              @click="toggleDay(daynum, idx, t)"
             >
-              <span>{{day}}</span>
+              <span>{{t}}</span>
             </div>
               
           </div>
@@ -397,13 +397,23 @@ export default {
       }
       this.$emit('input', this.timetable);
     },
-    toggleDay (day, time) {
+    // toggleDay (day, time) {
+    //   let indexDay = this.timetable[day].findIndex(el => el == time);
+    //   // alert(indexDay)
+    //   if (indexDay != -1) {
+    //     this.timetable[day].splice(indexDay, 1);
+    //   } else {
+    //     this.timetable[day].push(time);
+    //   }
+    //   this.$emit('input', this.timetable);
+    // },
+    toggleDay (day, time, t) {
       let indexDay = this.timetable[day].findIndex(el => el == time);
       // alert(indexDay)
       if (indexDay != -1) {
         this.timetable[day].splice(indexDay, 1);
       } else {
-        this.timetable[day].push(time);
+        this.timetable[day].push(t);
       }
       this.$emit('input', this.timetable);
     },

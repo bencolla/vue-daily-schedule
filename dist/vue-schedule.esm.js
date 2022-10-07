@@ -385,13 +385,23 @@ var script = {
       }
       this.$emit('input', this.timetable);
     },
-    toggleDay (day, time) {
+    // toggleDay (day, time) {
+    //   let indexDay = this.timetable[day].findIndex(el => el == time);
+    //   // alert(indexDay)
+    //   if (indexDay != -1) {
+    //     this.timetable[day].splice(indexDay, 1);
+    //   } else {
+    //     this.timetable[day].push(time);
+    //   }
+    //   this.$emit('input', this.timetable);
+    // },
+    toggleDay (day, time, t) {
       let indexDay = this.timetable[day].findIndex(el => el == time);
       // alert(indexDay)
       if (indexDay != -1) {
         this.timetable[day].splice(indexDay, 1);
       } else {
-        this.timetable[day].push(time);
+        this.timetable[day].push(t);
       }
       this.$emit('input', this.timetable);
     },
@@ -552,13 +562,13 @@ var __vue_render__ = function () {var _vm=this;var _h=_vm.$createElement;var _c=
               },on:{"click":function($event){_vm.toggleWeek(idx, _vm.checkFullWeek(idx));}}}):_vm._e(),_vm._v(" "),_vm._l((_vm.dayTable),function(day,daynum){return _c('div',{key:daynum,ref:"ruleTimeItem",refInFor:true,class:{
                 'vws-time-list vws-rule-time-item': true, 
                 'active': _vm.timetable[daynum].find(function (el) { return el == idx; } ) != undefined ? true:false
-              },on:{"click":function($event){return _vm.toggleDay(daynum, idx)}}},[_c('span',[_vm._v(_vm._s(day))])])})],2)})],2)])])])])};
+              },on:{"click":function($event){return _vm.toggleDay(daynum, idx, t)}}},[_c('span',[_vm._v(_vm._s(t))])])})],2)})],2)])])])])};
 var __vue_staticRenderFns__ = [];
 
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = "data-v-e824cf64";
+  const __vue_scope_id__ = "data-v-57e00ed5";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
